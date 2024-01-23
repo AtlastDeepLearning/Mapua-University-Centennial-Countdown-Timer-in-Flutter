@@ -2,13 +2,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: Frame3(),
       ),
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Frame3 extends StatefulWidget {
+  const Frame3({super.key});
+
   @override
   _Frame3State createState() => _Frame3State();
 }
@@ -51,7 +55,7 @@ class _Frame3State extends State<Frame3> {
     days = myTime ~/ 86400;
 
     // Update the countdown every second
-    Timer(Duration(seconds: 1), updateCountdown);
+    Timer(const Duration(seconds: 1), updateCountdown);
 
     setState(() {}); // Trigger a rebuild to update the UI
   }
@@ -64,7 +68,7 @@ class _Frame3State extends State<Frame3> {
           width: 1920,
           height: 1080,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
           ),
           child: Stack(
@@ -75,7 +79,7 @@ class _Frame3State extends State<Frame3> {
                 child: Container(
                   width: 1920,
                   height: 1080,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("images/Frame.png"),
                       fit: BoxFit.fill,
@@ -93,7 +97,7 @@ class _Frame3State extends State<Frame3> {
                 child: Text(
                   '$days',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFD9291C),
                     fontSize: 386,
                     fontFamily: 'Outfit',
@@ -115,9 +119,9 @@ class _Frame3State extends State<Frame3> {
                 left: 537,
                 top: 711,
                 child: Text(
-                  '${hours.toString().padLeft(2, '0')}',
+                  hours.toString().padLeft(2, '0'),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFFFB81D),
                     fontSize: 196,
                     fontFamily: 'Outfit',
@@ -139,9 +143,9 @@ class _Frame3State extends State<Frame3> {
                 left: 850,
                 top: 711,
                 child: Text(
-                  '${minutes.toString().padLeft(2, '0')}',
+                  minutes.toString().padLeft(2, '0'),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFFFB81D),
                     fontSize: 196,
                     fontFamily: 'Outfit',
@@ -163,9 +167,9 @@ class _Frame3State extends State<Frame3> {
                 left: 1147,
                 top: 711,
                 child: Text(
-                  '${seconds.toString().padLeft(2, '0')}',
+                  seconds.toString().padLeft(2, '0'),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFFFB81D),
                     fontSize: 196,
                     fontFamily: 'Outfit',
