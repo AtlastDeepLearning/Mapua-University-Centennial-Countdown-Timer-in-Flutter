@@ -1,0 +1,44 @@
+name: Build for GitHub Pages
+
+on:
+    push:
+      branches:
+        - main
+  
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            path: ./project/
+        - uses: actions/checkout@v3
+          with:
+            ref: gh-pages
+            path: ./gh-pages/
+        - uses: subosito/flutter-action@v2
+          with:
+            channel: 'stable'
+        
+        # Cleanup (docs)
+        - working-directory: ./gh-pages/
+          run: |
+            git rm --ignore-unmatch -rf .
+            git clean -fxd
+            
+        - run: flutter pub get
+          working-directory: ./project/
+        - run: flutter build web --base-href="/Mapua-University-Centennial-Countdown-Timer-in-Flutter/"
+          working-directory: ./project/
+        
+        - run: cp -r build/web/. ../gh-pages/
+          working-directory: ./project/
+
+        - uses: EndBug/add-and-commit@v9
+          with:
+            cwd: ./gh-pages/
+            default_author: github_actions
+            add: "."
+            message: Updating site [${{ github.sha }}]
+            push: true
+  
