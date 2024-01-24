@@ -39678,7 +39678,7 @@ case 2:return A.M(o,r)}})
 return A.O($async$nq,r)}}
 A.TQ.prototype={}
 A.np.prototype={
-gk0(){return"images/Frame.png"},
+gk0(){return"assets/images/Frame.png"},
 Un(a){var s,r={},q=a.a
 if(q==null)q=$.GV()
 r.a=r.b=null
