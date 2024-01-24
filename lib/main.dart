@@ -67,24 +67,24 @@ class _Frame3State extends State<Frame3> {
     if (screenSize == 2540) {
       switch (type) {
         case 'days':
-          return const EdgeInsets.only(left: 859, top: 309);
+          return const EdgeInsets.only(left: 846, top: 201);
         case 'hours':
-          return const EdgeInsets.only(left: 669, top: 854);
+          return const EdgeInsets.only(left: 400, top: 815);
         case 'minutes':
-          return const EdgeInsets.only(left: 1069, top: 854);
+          return const EdgeInsets.only(left: 1070, top: 815);
         case 'seconds':
-          return const EdgeInsets.only(left: 1469, top: 854);
+          return const EdgeInsets.only(left: 1609, top: 815);
       }
     } else {
       switch (type) {
         case 'days':
-          return const EdgeInsets.only(left: 633, top: 224);
+          return const EdgeInsets.only(left: 633, top: 154);
         case 'hours':
-          return const EdgeInsets.only(left: 537, top: 711);
+          return const EdgeInsets.only(left: 431, top: 621);
         case 'minutes':
-          return const EdgeInsets.only(left: 850, top: 711);
+          return const EdgeInsets.only(left: 850, top: 621);
         case 'seconds':
-          return const EdgeInsets.only(left: 1147, top: 711);
+          return const EdgeInsets.only(left: 1247, top: 621);
       }
     }
 
