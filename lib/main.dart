@@ -145,7 +145,7 @@ class _Frame3State extends State<Frame3> {
                   height: bgSize[1],
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("images/Frame.png"),
+                      image: AssetImage("assets/images/Frame.png"),
                       fit: BoxFit.fill,
                     ),
                   ),
